@@ -8,15 +8,23 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <section id="playAreaTitleStrip">
-      <h1>Memory</h1>
-    </section><section id="menuAreaTitleStrip">
-      <h1>Menu</h1>
-    </section><section id="playArea">
-      <!-- TypeScript Creates the game board here -->
-    </section><section id="menuArea">
-      <!-- <button id="keyButton"><img id="keyDisplay" src="key.png" alt="Diagram showing the answer key."></button> -->
+    <section id="upperRegion">
+      <section id="playAreaTitleStrip"><h1>Memory</h1></section>
+      <section id="menuAreaTitleStrip"><h1>Menu</h1></section>
     </section>
+    <section id="mainRegion">
+      <section id="playArea">
+        <!-- TypeScript creates the game board here -->
+        <!-- The typscript will create a 5x4 board of buttons with classname of grid-button -->
+      </section>
+      <section id="menuArea">
+        <div id="buttonContainer">
+          <button id="showKeyButton"><img id="keyImageDisplay" src=".\assets\images\keyUnlocker.png" alt="Diagram showing the answer key."></button>
+          <button id="newGameButton"><img id="newGameDisplay" src=".\assets\images\new_game.png" alt="a new game button"></button>
+        </div>
+      </section>
+    </section>
+
     <script defer src="script.js"></script>
   </body>
 </html>

@@ -1,5 +1,3 @@
-// NOTE:
-// Currently displays well only at 60% zoom level.
 const playArea = document.getElementById("playArea");
 const board = document.createElement("div");
 board.innerHTML = "";
@@ -169,9 +167,10 @@ let atLimit = false;
 let lastGroupMatched = false;
 
 function updateNewGameButtonImage(imagePath: string): void {
-  const theNewGameImage: HTMLImageElement = document.getElementById("newGameDisplayImage") as HTMLImageElement;
-  theNewGameImage.src = `${imageFolder}${imagePath}`
+  const newGameDisplayImage: HTMLImageElement = document.getElementById("newGameDisplay") as HTMLImageElement;
+  newGameDisplayImage.src = `${imageFolder}${imagePath}`;
 }
+
 
 function triggerNewGameButton(): void {
   console.log("NEW GAME BUTTON WAS TRIGGERED.");
@@ -284,38 +283,25 @@ for (let y: number = 0; y < boardSizeY; y++) {
 
 let keyShown = false; // used to indicate if memory match key is being shown.
 function toggleKeyDisplay() {
-  let theImage: HTMLImageElement = document.getElementById("keyDisplayImage") as HTMLImageElement;
+  let theImage: HTMLImageElement = document.getElementById("keyImageDisplay") as HTMLImageElement;
   theImage.src = ternary(!keyShown, `${imageFolder}key.png`, `${imageFolder}keyUnlocker.png`); // toggle image
   keyShown = ternary(keyShown, false, true); // toggle keyShown.
 }
 
-// Create the keyButton
-const menuArea = document.getElementById("menuArea");
-const keyButton: HTMLButtonElement = document.createElement('keyButton') as HTMLButtonElement;
-keyButton.type = 'button'
-keyButton.className = 'key-button';
-keyButton.id = 'keyButton';
-keyButton.innerHTML = `<img id="keyDisplayImage" src="${imageFolder}keyUnlocker.png" alt="alt text">`;
+// Get the show key button
+const showKeyButton = document.getElementById("showKeyButton");
+const showKeyDisplayImage = document.getElementById("keyImageDisplay") as HTMLImageElement;
 
-// Add event listener for the keyButton.
-keyButton.addEventListener('click', () => {
+// Add event listener for the show key button.
+showKeyButton.addEventListener('click', () => {
   toggleKeyDisplay();
-})
+});
 
-// Add the keyButton to the menuArea.
-menuArea.appendChild(keyButton);
+// Get the new game button and the new game display image element
+const newGameButton = document.getElementById("newGameButton");
+const newGameDisplayImage = document.getElementById("newGameDisplay") as HTMLImageElement;
 
-// Create the newGameButton
-const newGameButton: HTMLButtonElement = document.createElement('newGameButton') as HTMLButtonElement;
-newGameButton.type = 'button'
-newGameButton.className = 'new-game-button'
-newGameButton.id = 'newGameButton';
-newGameButton.innerHTML = `<img id="newGameDisplayImage" src="${imageFolder}new_game.png" alt="alt text">`;
-
-// Add event listener for the newGameButton.
+// Add event listener for the new game button.
 newGameButton.addEventListener('click', () => {
   triggerNewGameButton();
-})
-
-// Add the newGameButton to the menuArea.
-menuArea.appendChild(newGameButton);
+});

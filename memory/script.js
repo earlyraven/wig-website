@@ -7,8 +7,6 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-// NOTE:
-// Currently displays well only at 60% zoom level.
 var playArea = document.getElementById("playArea");
 var board = document.createElement("div");
 board.innerHTML = "";
@@ -131,8 +129,8 @@ function updateDisplay(index) {
 var atLimit = false;
 var lastGroupMatched = false;
 function updateNewGameButtonImage(imagePath) {
-    var theNewGameImage = document.getElementById("newGameDisplayImage");
-    theNewGameImage.src = "".concat(imageFolder).concat(imagePath);
+    var newGameDisplayImage = document.getElementById("newGameDisplay");
+    newGameDisplayImage.src = "".concat(imageFolder).concat(imagePath);
 }
 function triggerNewGameButton() {
     console.log("NEW GAME BUTTON WAS TRIGGERED.");
@@ -241,32 +239,21 @@ for (var y = 0; y < boardSizeY; y++) {
 }
 var keyShown = false; // used to indicate if memory match key is being shown.
 function toggleKeyDisplay() {
-    var theImage = document.getElementById("keyDisplayImage");
+    var theImage = document.getElementById("keyImageDisplay");
     theImage.src = ternary(!keyShown, "".concat(imageFolder, "key.png"), "".concat(imageFolder, "keyUnlocker.png")); // toggle image
     keyShown = ternary(keyShown, false, true); // toggle keyShown.
 }
-// Create the keyButton
-var menuArea = document.getElementById("menuArea");
-var keyButton = document.createElement('keyButton');
-keyButton.type = 'button';
-keyButton.className = 'key-button';
-keyButton.id = 'keyButton';
-keyButton.innerHTML = "<img id=\"keyDisplayImage\" src=\"".concat(imageFolder, "keyUnlocker.png\" alt=\"alt text\">");
-// Add event listener for the keyButton.
-keyButton.addEventListener('click', function () {
+// Get the show key button
+var showKeyButton = document.getElementById("showKeyButton");
+var showKeyDisplayImage = document.getElementById("keyImageDisplay");
+// Add event listener for the show key button.
+showKeyButton.addEventListener('click', function () {
     toggleKeyDisplay();
 });
-// Add the keyButton to the menuArea.
-menuArea.appendChild(keyButton);
-// Create the newGameButton
-var newGameButton = document.createElement('newGameButton');
-newGameButton.type = 'button';
-newGameButton.className = 'new-game-button';
-newGameButton.id = 'newGameButton';
-newGameButton.innerHTML = "<img id=\"newGameDisplayImage\" src=\"".concat(imageFolder, "new_game.png\" alt=\"alt text\">");
-// Add event listener for the newGameButton.
+// Get the new game button and the new game display image element
+var newGameButton = document.getElementById("newGameButton");
+var newGameDisplayImage = document.getElementById("newGameDisplay");
+// Add event listener for the new game button.
 newGameButton.addEventListener('click', function () {
     triggerNewGameButton();
 });
-// Add the newGameButton to the menuArea.
-menuArea.appendChild(newGameButton);
