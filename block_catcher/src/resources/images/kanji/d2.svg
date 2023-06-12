@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 150 150"
+  width="100%"
+  height="100%">
+  <g>
+    <!-- Add the main rectangle (outer rectangle) -->
+    <rect
+       x="1%"
+       y="1%"
+       width="98%"
+       height="98%"
+       fill="lime"
+       stroke="teal"
+       stroke-width="2%"
+       id="main_rect" />
+    <!-- Add the main text -->
+    <text
+       x="50%"
+       y="50%"
+       text-anchor="middle"
+       dy="0.302em"
+       font-size="67px"
+       fill="red"
+       id="main_text">二</text>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+file: data-type-number.svg
+renamed: favicon.svg
+description: Icon (1,2,3,4,5,6 number icon):
+source: https://iconduck.com/icons/293715/data-type-number
+licence: Creative Commons Zero v1.0 Universal
+
++++
