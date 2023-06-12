@@ -1,0 +1,13 @@
+Can try online:
+https://playcode.io/typescript
+
+transpile commnad:
+npx tsc --outFile ~/Desktop/Projects/TypeScript/ts_playground/change_html/dist/script-transpiled.js ~/Desktop/Projects/TypeScript/ts_playground/change_html/src/script.ts 
+
+shorter (from project dir... just outside "src" and "dist" directories):
+npx tsc --outFile dist/script-transpiled.js src/script.ts 
+
+note:
+make sure index.html is using the .js as it's source (unless using the online playcode above; then it should be the .ts)
+
+

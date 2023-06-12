@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Memory</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section id="upperRegion">
+      <section id="playAreaTitleStrip"><h1>Memory</h1></section>
+      <section id="menuAreaTitleStrip"><h1>Menu</h1></section>
+    </section>
+    <section id="mainRegion">
+      <section id="playArea">
+        <!-- TypeScript creates the game board here -->
+        <!-- The typscript will create a 5x4 board of buttons with classname of grid-button -->
+      </section>
+      <section id="menuArea">
+        <div id="buttonContainer">
+          <button id="showKeyButton"><img id="keyImageDisplay" src=".\assets\images\keyUnlocker.png" alt="Diagram showing the answer key."></button>
+          <button id="newGameButton"><img id="newGameDisplay" src=".\assets\images\new_game.png" alt="a new game button"></button>
+        </div>
+      </section>
+    </section>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>
