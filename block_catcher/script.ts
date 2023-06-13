@@ -1,5 +1,3 @@
-// "use strict";//temp disable to see if it is affecting MIME error.
-
 // Global UI Settings (change this later) to be in it's own class perhaps
 let uiSettingKeyShown = true;
 let victoryShouldBeDisplayed = false;
