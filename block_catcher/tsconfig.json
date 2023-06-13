@@ -4,6 +4,7 @@
     "module": "es2020",
     "outDir": "dist",
     "rootDir": "src",
-    "strict": true
+    // "strict": true//temp disabled to see if it will fix MIME issue.
+    "strict": false
   }
 }
